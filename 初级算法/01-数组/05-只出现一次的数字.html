@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>只出现一次的数字</title>
+	</head>
+	<body>
+	</body>
+	<script>
+		let nums = [4,1,2,1,2]
+		var singleNumber = function(nums) {
+			for(let i = 0; i < nums.length; i++) {
+				if(nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
+					return nums[i]
+				}
+			}
+		};
+	</script>
+</html>
