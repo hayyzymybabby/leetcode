@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>移动零</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var moveZeroes = function(nums) {
+			let oldLength = nums.length
+
+
+			for (let i = 0; i < nums.length; i++) {
+				if (nums[i] === 0) {
+					nums.splice(i, 1)
+					i--
+				}
+			}
+
+			let newLength = nums.length
+
+			for (let i = 0; i < oldLength - newLength; i++) {
+				nums.push(0)
+			}
+
+			return nums
+		};
+	</script>
+</html>

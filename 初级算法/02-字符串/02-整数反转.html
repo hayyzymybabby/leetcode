@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>整数反转</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var reverse = function(x) {
+			var newX = x + '';
+			var result = '';
+			if (newX.charAt(0) == '-') {
+				for (var i = newX.length - 1; i > 0; i--) {
+					result += newX.charAt(i);
+				}
+				result = -result;
+			} else {
+				for (var i = newX.length - 1; i >= 0; i--) {
+					result += newX.charAt(i);
+				}
+
+			}
+			if (result > (Math.pow(2, 31) - 1) || result < (Math.pow(-2, 31))) {
+				return 0
+			}
+			return parseInt(result);
+
+		};
+	</script>
+</html>
