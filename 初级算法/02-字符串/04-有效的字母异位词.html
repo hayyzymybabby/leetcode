@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>有效的字母异位词</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var s = "anagram",
+			t = "nagaram"
+
+		var isAnagram = function(s, t) {
+			if (s.length !== t.length) {
+				return false
+			}
+			return s.split('').sort().join('') === t.split('').sort().join('')
+		};
+
+		isAnagram(s, t)
+	</script>
+</html>

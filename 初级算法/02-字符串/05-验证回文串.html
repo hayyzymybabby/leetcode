@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>验证回文串</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		let s = "A man, a plan, a canal: Panama"
+		var isPalindrome = function(s) {
+			s = s.replace(/[^0-9a-zA-Z]/g, '').toLowerCase()
+			var left = 0;
+			var right = s.length - 1;
+			while (left < right) {
+				if (s[left] != s[right]) {
+					return false;
+				}
+				left++;
+				right--;
+			}
+			return true;
+		};
+		isPalindrome(s)
+	</script>
+</html>
