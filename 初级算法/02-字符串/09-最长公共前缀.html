@@ -7,11 +7,37 @@
 	<body>
 	</body>
 	<script type="text/javascript">
-		let strs = ["flower","flow","flight"]
+		let strs = ["flower", "flow", "flight"]
 		var longestCommonPrefix = function(strs) {
-			for(let i = 0; i < strs.length; i++) {
-				
+			if (strs.length === 0 || strs[0].length === 0) {
+				return "";
 			}
+			var str = strs[0];
+			for (let i = 1, len = strs.length; i < len; i++) {
+				while (strs[i].indexOf(str) !== 0) {
+					if (str.length === 0) {
+						return "";
+					}
+					str = str.substring(0, str.length - 1);
+				}
+			}
+			return str;
+		}
+
+		var longestCommonPrefix = function(strs) {
+			if(strs.length === 0 || str[0].length === 0) {
+				return ""
+			}
+			let str = strs[0]
+			for(let i = 1, len = strs.length; i < len; i++) {
+				while(strs[i].indexOf(str) !== 0) {
+					if(str.length === 0) {
+						return ""
+					}
+					str = str.substring(0, str.length - 1)
+				}
+			}
+			return str
 		};
 	</script>
 </html>
