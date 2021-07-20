@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>旋转数组</title>
-	</head>
-	<body>
-	</body>
-	<script type="text/javascript">
-		var nums = [1,2,3,4,5,6,7], k = 3
-		// mine
-		// 时间过长
-	// 	var rotate = function(nums, k) {
-	// 		let length = nums.length
-	// 		let newK = k % length
-	
-	// 		while(newK) {
-	// 			nums.unshift(nums.pop())
-	// 			newK--
-	// 		}
-	// 	};
-		
-		var rotate = function(nums, k) {
-			let length = nums.length
-			let newK = k % length
-			
-			while(newK) {
-				nums.unshift(nums.pop())
-				newK--
-			}
-		};
-		
-		
-		
+
+<head>
+	<meta charset="utf-8">
+	<title>旋转数组</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+	var nums = [1, 2, 3, 4, 5, 6, 7], k = 3
+	// mine
+	// 时间过长
+	// var rotate = function(nums, k) {
+	// 	let length = nums.length
+	// 	let newK = k % length
+
+	// 	while(newK) {
+	// 		nums.unshift(nums.pop())
+	// 		newK--
+	// 	}
+	// };
+
+	var reverse = function (nums, start, end) {
+		while (start < end) {
+			[nums[start++], nums[end--]] = [nums[end], nums[start]]
+		}
+	}
+
+	var rotate = function (nums, k) {
+		k %= nums.length
+		reverse(nums, 0, nums.length - 1)
+		reverse(nums, 0, k - 1)
+		reverse(nums, k, nums.length - 1)
+		return nums
+	}
+
+
+
 		// rotate(nums, k)
-	</script>
+</script>
+
 </html>
