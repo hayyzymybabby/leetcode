@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>存在重复元素</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 1、ES6
+  var nums = [1,2,3,4]
+  // var containsDuplicate = function(nums) {
+  //   const oldLength = nums.length
+  //   const newSet = new Set(nums)
+  //   const newLength = newSet.size
+  //   return oldLength !== newLength
+  // };
+
+  var containsDuplicate = function(nums) {
+    nums.sort((a,b)=>a-b)
+    const n = nums.length
+    for (let i = 0; i < n - 1; i++) {
+        if (nums[i] === nums[i + 1]) {
+            return true;
+        }
+    }
+    return false
+  };
+</script>
+</html>
